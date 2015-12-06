@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>{{title}}</title>
+    {% block meta %}
+	{% endblock %}
+    <link rel="stylesheet" href="css/normalize.css">
+    <link rel="stylesheet" href="css/main.css">
+    <link rel="stylesheet" href="css/responsive.css">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script type="text/javascript" async defer src="//assets.pinterest.com/js/pinit.js"></script>
+  </head>
+  <body>
+    <header>
+      <a href="/" id="logo" style="text-decoration:none;">
+        <img src="/img/butler-silver-logo.png" alt="Butler Silver Logo"/>
+        <div id="name">	
+        	<h1>Butler Silver</h1>
+        	<h2>Robert A. Butler Silversmith</h2>
+        </div>
+      </a>
+      <div class="clearfix"></div>
+      <nav>
+        <ul>
+          <li><a href="/" {% if activeP %}class="selected"{% endif %}>Gallery</a></li>
+          <li><a href="repairs" {% if activeR %}class="selected"{% endif %}>Repairs</a></li>
+          <li><a href="about" {% if activeA %}class="selected"{% endif %}>About</a></li>
+          <li><a href="contact" {% if activeC %}class="selected"{% endif %}>Contact</a></li>
+        </ul>
+      </nav>
+    </header>
+    <div id="wrapper">
+
+	{% block article %}
+	{% endblock %}
+
+	  <footer>
+        <p>&copy; {{year}} Robert A. Butler</p>
+        <a href="#"><img src="/img/butler-silver-logo.png" alt="Butler Silver Logo" class="social-icon"></a>
+      </footer>
+    </div><!--/.wrapper-->
+    
+    <!-- Google Tag Manager -->
+	<noscript><iframe src="//www.googletagmanager.com/ns.html?id=GTM-5DNZFN"
+	height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+	<script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+	new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+	j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+	'//www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+	})(window,document,'script','dataLayer','GTM-5DNZFN');</script>
+	<!-- End Google Tag Manager -->
+	
+  </body>
+</html>
