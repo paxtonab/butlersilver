@@ -1,21 +1,16 @@
-from google.appengine.ext import db
-from string import letters
 import datetime
-import hashlib
-import hmac
-import jinja2
-import random
-import re
-import os
 import urllib
-import webapp2
+from flask import Flask, flash, g, render_template, redirect, url_for
+from flask_wtf import Form
+from wtforms import BooleanField, StringField, PasswordField, TextAreaField, TextField, IntegerField, DateField, SelectMultipleField, RadioField
+from wtforms.validators import (DataRequired, Regexp, ValidationError,
+								Email, Length, EqualTo)
 
-template_dir = os.path.join(os.path.dirname(__file__), 'templates')
-jinja_env = jinja2.Environment(loader = jinja2.FileSystemLoader(template_dir),
-autoescape = True)
+app = Flask(__name__)
 
 today = datetime.datetime.today()
 year = today.year
+
 
 home = 'http://www.butlersilver.com'
 
@@ -50,7 +45,7 @@ silver4 = {'url':'img/butler-fish-slice.jpg',
 			'url_small':'img/butler-fish-slice-small.jpg',
 			'description':'Fish slice. Victoria and Albert Museum, London.',
 			'name':'Sterling Silver Fish Slice',
-			'permalink':'',
+			'permalink':'silver-fish-slice',
 			'encoded_url': urllib.quote_plus(home+'/img/butler-fish-slice.jpg'),
 			'encoded_description': urllib.quote_plus('Fish slice. Victoria and Albert Museum, London.')}
 
@@ -77,7 +72,7 @@ silver7 = {'url':'img/butler-mushroom-wine-coaster.jpg',
 			'permalink':'silver-mushroom-wine-coaster',
 			'encoded_url': urllib.quote_plus(home+'/img/butler-mushroom-wine-coaster.jpg'),
 			'encoded_description': urllib.quote_plus('Mushroom wine bottle coaster. Available.')}
-			
+
 silver8 = {'url':'img/butler-animal-bowl.jpg',
 			'url_small':'img/butler-animal-bowl-small.jpg',
 			'description':'Animal bowl. Museum of Fine Arts, Boston.',
@@ -85,34 +80,34 @@ silver8 = {'url':'img/butler-animal-bowl.jpg',
 			'permalink':'silver-animal-bowl',
 			'encoded_url': urllib.quote_plus(home+'img/butler-animal-bowl.jpg'),
 			'encoded_description': urllib.quote_plus('Animal bowl. Museum of Fine Arts, Boston.')}
-			
+
 silver9 = {'url':'img/butler-silver-baby-cup.jpg',
 			'url_small':'img/butler-silver-baby-cup-small.jpg',
 			'description':'Baby cup with swan handle. Available.',
-			'name':'Sterling Silver Baby Cup',
+			'name':'Sterling Silver Baby Cup with Swan Handle',
 			'permalink':'silver-baby-cup',
 			'encoded_url': urllib.quote_plus(home+'img/butler-silver-baby-cup.jpg'),
 			'encoded_description': urllib.quote_plus('Sterling Silver Baby Cup with Swan Handle.')}
-			
+
 silver10 = {'url':'img/mice-and-cheese-silver-knife.jpg',
 			'url_small':'img/mice-and-cheese-silver-knife-small.jpg',
 			'description':'Sterling Silver Mouse & Cheese Knife. Available.',
-			'name':'Sterling Silver Cheese Knife',
+			'name':'Sterling Silver Mouse & Cheese, Cheese Knife',
 			'permalink':'silver-cheese-knife',
 			'encoded_url': urllib.quote_plus(home+'img/mice-and-cheese-silver-knife.jpg'),
 			'encoded_description': urllib.quote_plus('Sterling Silver Mouse and Cheese Knife.')}
-			
+
 silver11 = {'url':'img/sterling-silver-elephant-baby-cup.jpg',
 			'url_small':'img/sterling-silver-elephant-baby-cup-small.jpg',
 			'description':'Sterling Silver Baby Cup with Elephant Handle. Available.',
-			'name':'Sterling Silver Baby Cup Elephant Handle',
+			'name':'Sterling Silver Baby Cup with Elephant Handle',
 			'permalink':'silver-baby-cup-elephant-handle',
 			'encoded_url': urllib.quote_plus(home+'img/sterling-silver-elephant-baby.jpg'),
 			'encoded_description': urllib.quote_plus('Sterling Silver Baby Cup with Elephant Handle.')}
 
 silver = [silver10,
 			silver11,
-			silver1, 
+			silver1,
 			silver8,
 			silver3,
 			silver4,
@@ -122,63 +117,64 @@ silver = [silver10,
 			silver2,
 			silver9]
 
-#class Silver(db.Model):
-#	title = db.StringProperty()
-#	picture = db.BlobProperty(default=None)
-#	description = db.TextProperty(required = True)
-#	created = db.DateTimeProperty(auto_now_add = True)
-#	description_encoded = db.TextProperty(required = True)
-#	url_encoded = db.TextProperty(required = True)
+@app.route('/')
+def index():
+    return render_template('index.html', gallery=silver, title="Butler Silver Gallery", activeP=True, year=year)
 
-class Handler(webapp2.RequestHandler):
-	def write(self, *a, **kw):
-		self.response.out.write(*a, **kw)
-		
-	def render_str(self, template, **params):
-		t = jinja_env.get_template(template)
-		return t.render(params)
 
-	def render(self, template, **kw):
-		self.write(self.render_str(template, **kw))
-		
-	def initialize(self, *a, **kw):
-		webapp2.RequestHandler.initialize(self, *a, **kw)
+@app.route('/about')
+def about():
+    return render_template('about.html', activeA=True, title="About Butler Silver", year=year)
 
-class MainHandler(Handler):
-    def render_front(self):
-        self.render("index.html", gallery=silver, title="Butler Silver Gallery", year=year, activeP=True)
-    
-    def get(self):
-        self.render_front()
-        
-class AboutHandler(Handler):
-    def render_front(self):
-    	self.render("about.html", title="About Butler Silver", year=year, activeA=True)
-    
-    def get(self):
-        self.render_front()
-        
-class ContactHandler(Handler):
-    def render_front(self):
-    	self.render("contact.html", title="Contact Butler Silver", year=year, activeC=True)
-    
-    def get(self):
-        self.render_front()
-        
-class ResumeHandler(Handler):
-    def render_front(self):
-    	self.render("repairs.html", title="Silver Repairs & Appraisals", year=year, activeR=True)
-    
-    def get(self):
-        self.render_front()
 
-app = webapp2.WSGIApplication([
-    ('/', MainHandler),
-    ('/about', AboutHandler),
-    ('/contact', ContactHandler),
-	('/repairs', ResumeHandler),
-	webapp2.Route('/workshop.html', webapp2.RedirectHandler, defaults={'_uri':'/about'}),
-	webapp2.Route('/wine_coasters.html', webapp2.RedirectHandler, defaults={'_uri':'/'}),
-	webapp2.Route('/animals.html', webapp2.RedirectHandler, defaults={'_uri':'/'}),
-	webapp2.Route('/contact.html', webapp2.RedirectHandler, defaults={'_uri':'/contact'})
-], debug=True)
+@app.route('/contact')
+def contact():
+    return render_template('contact.html', activeC=True, title="Contact Butler Silver", year=year)
+
+
+@app.route('/repairs')
+def repairs():
+    return render_template('repairs.html', activeR=True, title="Silver Repairs & Appraisals", year=year)
+
+
+@app.route('/gallery/<silver_permalink>-<silver_id>')
+def gallery(silver_permalink, silver_id):
+    return render_template('silver.html',
+							gallery=silver[int(silver_id)],
+							title="Butler Silver Gallery",
+							activeP=True,
+							year=year)
+
+
+
+#@app.errorhandler(404)
+#def page_not_found(e):
+#    """Return a custom 404 error."""
+#    return render_template('404.html', title='404: Page Not Found', year=year)
+    #'Sorry, Nothing at this URL.', 404
+
+
+#@app.errorhandler(500)
+#def application_error(e):
+#    """Return a custom 500 error."""
+#    return 'Sorry, unexpected error: {}'.format(e), 500
+
+
+@app.route('/workshop.html')
+def workshop_redirect():
+	return redirect(app.about(), code=301)
+
+@app.route('/wine_coasters.html')
+def wine_coasters_redirect():
+	return redirect(app.index(), code=301)
+
+@app.route('/animals.html')
+def animals_redirect():
+	return redirect(app.index(), code=301)
+
+@app.route('/contact.html')
+def contact_redirect():
+	return redirect(app.contact(), code=301)
+
+if __name__ == '__main__':
+    app.run()

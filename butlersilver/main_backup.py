@@ -17,12 +17,13 @@ autoescape = True)
 today = datetime.datetime.today()
 year = today.year
 
-home = 'http://valid-alpha-860.appspot.com'
+home = 'http://www.butlersilver.com'
 
 encoded_home = urllib.quote_plus(home)
 
 
 silver1 = {'url':'img/butler-silver-sea-vase.jpg',
+			'url_small':'img/butler-silver-sea-vase-small.jpg',
 			'description':'Sea shell and coral vase. Available.',
 			'name':'Sterling Silver Sea Shell and Coral Vase',
 			'permalink':'silver-sea-vase',
@@ -30,6 +31,7 @@ silver1 = {'url':'img/butler-silver-sea-vase.jpg',
 			'encoded_description': urllib.quote_plus('Sea shell and coral vase. Available.')}
 
 silver2 = {'url':'img/butler-hair-comb.jpg',
+			'url_small':'img/butler-hair-comb-small.jpg',
 			'description':'Art-nouveau style hair comb. Private Collection.',
 			'name':'Sterling Silver Octopus Hair Comb',
 			'permalink':'silver-hair-comb',
@@ -37,6 +39,7 @@ silver2 = {'url':'img/butler-hair-comb.jpg',
 			'encoded_description': urllib.quote_plus('Art-nouveau style hair comb. Private Collection.')}
 
 silver3 = {'url':'img/butler-penguin-bowl.jpg',
+			'url_small':'img/butler-penguin-bowl-small.jpg',
 			'description':'Penguin bowl. Private collection.',
 			'name':'Sterling Silver Emperor Penguin Ice Bucket',
 			'permalink':'silver-penguin-bowl',
@@ -44,6 +47,7 @@ silver3 = {'url':'img/butler-penguin-bowl.jpg',
 			'encoded_description': urllib.quote_plus('Penguin bowl. Private collection.')}
 
 silver4 = {'url':'img/butler-fish-slice.jpg',
+			'url_small':'img/butler-fish-slice-small.jpg',
 			'description':'Fish slice. Victoria and Albert Museum, London.',
 			'name':'Sterling Silver Fish Slice',
 			'permalink':'',
@@ -51,13 +55,15 @@ silver4 = {'url':'img/butler-fish-slice.jpg',
 			'encoded_description': urllib.quote_plus('Fish slice. Victoria and Albert Museum, London.')}
 
 silver5 = {'url':'img/butler-silver-frog.jpg',
-			'description':'Silver bull frog. Available.',
+			'url_small':'img/butler-silver-frog-small.jpg',
+			'description':'Sterling silver green frog. Available.',
 			'name':'Sterling Silver Green Frog',
 			'permalink':'silver-frog',
 			'encoded_url': urllib.quote_plus(home+'/img/butler-silver-frog.jpg'),
 			'encoded_description': urllib.quote_plus('Silver green frog. Available.')}
 
 silver6 = {'url':'img/butler-acorn-oak-leaves-wine-coaster.jpg',
+			'url_small':'img/butler-acorn-oak-leaves-wine-coaster-small.jpg',
 			'description':'Acorn and oak leaf wine bottle coaster. Available.',
 			'name':'Sterling Silver Acorn and Oak Leaf Wine Bottle Coaster',
 			'permalink':'silver-acorn-oak-leaves-wine-coaster',
@@ -65,27 +71,56 @@ silver6 = {'url':'img/butler-acorn-oak-leaves-wine-coaster.jpg',
 			'encoded_description': urllib.quote_plus('Acorn and oak leaf wine bottle coaster. Available.')}
 
 silver7 = {'url':'img/butler-mushroom-wine-coaster.jpg',
+			'url_small':'img/butler-mushroom-wine-coaster-small.jpg',
 			'description':'Mushroom wine bottle coaster. Available.',
 			'name':'Sterling Silver Mushroom Wine Bottle Coaster',
 			'permalink':'silver-mushroom-wine-coaster',
 			'encoded_url': urllib.quote_plus(home+'/img/butler-mushroom-wine-coaster.jpg'),
 			'encoded_description': urllib.quote_plus('Mushroom wine bottle coaster. Available.')}
-			
+
 silver8 = {'url':'img/butler-animal-bowl.jpg',
+			'url_small':'img/butler-animal-bowl-small.jpg',
 			'description':'Animal bowl. Museum of Fine Arts, Boston.',
 			'name':'Sterling Silver African Plains Animal Punch Bowl',
 			'permalink':'silver-animal-bowl',
 			'encoded_url': urllib.quote_plus(home+'img/butler-animal-bowl.jpg'),
 			'encoded_description': urllib.quote_plus('Animal bowl. Museum of Fine Arts, Boston.')}
 
-silver = [silver1, 
+silver9 = {'url':'img/butler-silver-baby-cup.jpg',
+			'url_small':'img/butler-silver-baby-cup-small.jpg',
+			'description':'Baby cup with swan handle. Available.',
+			'name':'Sterling Silver Baby Cup',
+			'permalink':'silver-baby-cup',
+			'encoded_url': urllib.quote_plus(home+'img/butler-silver-baby-cup.jpg'),
+			'encoded_description': urllib.quote_plus('Sterling Silver Baby Cup with Swan Handle.')}
+
+silver10 = {'url':'img/mice-and-cheese-silver-knife.jpg',
+			'url_small':'img/mice-and-cheese-silver-knife-small.jpg',
+			'description':'Sterling Silver Mouse & Cheese Knife. Available.',
+			'name':'Sterling Silver Cheese Knife',
+			'permalink':'silver-cheese-knife',
+			'encoded_url': urllib.quote_plus(home+'img/mice-and-cheese-silver-knife.jpg'),
+			'encoded_description': urllib.quote_plus('Sterling Silver Mouse and Cheese Knife.')}
+
+silver11 = {'url':'img/sterling-silver-elephant-baby-cup.jpg',
+			'url_small':'img/sterling-silver-elephant-baby-cup-small.jpg',
+			'description':'Sterling Silver Baby Cup with Elephant Handle. Available.',
+			'name':'Sterling Silver Baby Cup Elephant Handle',
+			'permalink':'silver-baby-cup-elephant-handle',
+			'encoded_url': urllib.quote_plus(home+'img/sterling-silver-elephant-baby.jpg'),
+			'encoded_description': urllib.quote_plus('Sterling Silver Baby Cup with Elephant Handle.')}
+
+silver = [silver10,
+			silver11,
+			silver1,
 			silver8,
 			silver3,
 			silver4,
 			silver6,
 			silver7,
 			silver5,
-			silver2]
+			silver2,
+			silver9]
 
 #class Silver(db.Model):
 #	title = db.StringProperty()
@@ -98,42 +133,42 @@ silver = [silver1,
 class Handler(webapp2.RequestHandler):
 	def write(self, *a, **kw):
 		self.response.out.write(*a, **kw)
-		
+
 	def render_str(self, template, **params):
 		t = jinja_env.get_template(template)
 		return t.render(params)
 
 	def render(self, template, **kw):
 		self.write(self.render_str(template, **kw))
-		
+
 	def initialize(self, *a, **kw):
 		webapp2.RequestHandler.initialize(self, *a, **kw)
 
 class MainHandler(Handler):
     def render_front(self):
         self.render("index.html", gallery=silver, title="Butler Silver Gallery", year=year, activeP=True)
-    
+
     def get(self):
         self.render_front()
-        
+
 class AboutHandler(Handler):
     def render_front(self):
     	self.render("about.html", title="About Butler Silver", year=year, activeA=True)
-    
+
     def get(self):
         self.render_front()
-        
+
 class ContactHandler(Handler):
     def render_front(self):
     	self.render("contact.html", title="Contact Butler Silver", year=year, activeC=True)
-    
+
     def get(self):
         self.render_front()
-        
+
 class ResumeHandler(Handler):
     def render_front(self):
     	self.render("repairs.html", title="Silver Repairs & Appraisals", year=year, activeR=True)
-    
+
     def get(self):
         self.render_front()
 
