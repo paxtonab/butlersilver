@@ -6,45 +6,73 @@
 		display: block;
 		margin: auto;
 	}
+
+	#logo_home img {
+		float:none;
+		display: block;
+		margin: auto;
+	}
+
+	#logo_home {
+		float:none;
+		display: block;
+		margin: auto;
+	}
+
+	#nav_home {
+		text-align: right;
+		float: none;
+    font-size: 0;
+	}
+
 }
 
 @media screen and (min-width: 480px) {
-  
+
   /**********************************
   PAGE: PORTFOLIO
   ***********************************/
-  
+
   #gallery li {
     width: 45%;
   }
-  
+
   #gallery li p {
     min-height: 45px;
   }
-  
+
+	/**********************************
+	Home Page
+	***********************************/
+
+	/*#home-gallery li {
+    width: 45%;
+		margin: 2.5%;
+  }*/
+
   /**********************************
   PAGE: ABOUT
   ***********************************/
-  
+
   .profile-photo {
     float: left;
     margin: 0 31px 15px 0;
   }
- 
- 
+
+
   /**********************************
   PAGE: CONTACT/RESUME
   ***********************************/
-   
+
   #primary {
     max-width: 470px;
     min-width: 400px;
   }
-  
+
   #secondary {
     max-width: 376px;
   }
-  
+
 }
 
 @media screen and (min-width: 750px) {
@@ -52,11 +80,18 @@
   /**********************************
   HEADER
   ***********************************/
+	body {
+		background-image: url(../img/butler-silver-hallmark.png);
+		--background-size: 220px 220px;
+		background-repeat: no-repeat;
+		background-position: right bottom;
+		background-attachment: fixed;
+	}
 
   header {
     float: left;
   }
-  
+
   #name {
     float:left;
   }
@@ -74,57 +109,79 @@
     text-align: right;
     //width: 56%;
   }
-  
+
+	#nav_home {
+		background: none;
+		margin-right: 5%;
+		text-align: right;
+		float: none;
+    font-size: 0;
+	}
+
   #logo {
     float: left;
     margin-left: 5%;
     text-align: left;
     width: 34%;
   }
-  
+
+	#logo_home {
+    font-size: 2em;
+    margin: 30px auto 0 auto;
+    text-align: center;
+    /*width: 34%;*/
+  }
+
   h1 {
     font-size: 2em;
   }
-  
+
   h2 {
     font-size: 0.825em;
     margin-bottom: 20px;
   }
-  
+
   header {
     border-bottom: 5px solid #490000;
     margin-bottom: 60px;
   }
-  
+
   /**********************************
   PAGE: PORTFOLIO
   ***********************************/
-  
+
   #gallery li {
     width: 28.3333%;
   }
-  
+
   #gallery li:nth-child(3n+1) {
     clear: left;
   }
-  
+
   /**********************************
   TWO COLUMN LAYOUT
   ***********************************/
-  
+
   #primary {
     width: 50%;
     float: left;
     min-width: 470px;
     margin-right: 60px;
   }
-  
+
   #secondary {
     width: 40%;
     float: left;
   }
 
+	/**********************************
+	Home Page
+	***********************************/
+	#home-banner {
+	    padding: 25% 0px;
+	}
+	#home-gallery li {
+    width: 28.3333%;
+  }
+
 }
-
-
-
