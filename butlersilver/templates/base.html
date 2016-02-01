@@ -4,7 +4,8 @@
     <meta charset="utf-8">
     <title>{{title}}</title>
     {% block meta %}
-	{% endblock %}
+	  {% endblock %}
+    <link href="https://fonts.googleapis.com/css?family=Vidaloka" rel='stylesheet' type='text/css'>
     <link rel="stylesheet" href="../css/normalize.css">
     <link rel="stylesheet" href="../css/main.css">
     <link rel="stylesheet" href="../css/responsive.css">
@@ -23,7 +24,7 @@
       <div class="clearfix"></div>
       <nav>
         <ul>
-          <li><a href="/" {% if activeP %}class="selected"{% endif %}>Gallery</a></li>
+          <li><a href="../gallery" {% if activeP %}class="selected"{% endif %}>Gallery</a></li>
           <li><a href="../repairs" {% if activeR %}class="selected"{% endif %}>Repairs</a></li>
           <li><a href="../about" {% if activeA %}class="selected"{% endif %}>About</a></li>
           <li><a href="../contact" {% if activeC %}class="selected"{% endif %}>Contact</a></li>
@@ -31,25 +32,23 @@
       </nav>
     </header>
     <div id="wrapper">
-
-	{% block article %}
-	{% endblock %}
-
-	  <footer>
-        <p>&copy; {{year}} Robert A. Butler</p>
-        <a href="#"><img src="/img/butler-silver-logo.png" alt="Butler Silver Logo" class="social-icon"></a>
-      </footer>
+      {% block article %}
+      {% endblock %}
+      <!-- stick footer-->
+      <div class="push"></div>
     </div><!--/.wrapper-->
-
+    <footer>
+      <p>&copy; {{year}} Robert A. Butler</p>
+      <a href="#"><img src="/img/butler-silver-logo.png" alt="Butler Silver Logo" class="social-icon"></a>
+    </footer>
     <!-- Google Tag Manager -->
-	<noscript><iframe src="//www.googletagmanager.com/ns.html?id=GTM-5DNZFN"
-	height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
-	<script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
-	new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
-	j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
-	'//www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
-	})(window,document,'script','dataLayer','GTM-5DNZFN');</script>
-	<!-- End Google Tag Manager -->
-
+    <noscript><iframe src="//www.googletagmanager.com/ns.html?id=GTM-5DNZFN"
+    height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+    <script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+    new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+    j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+    '//www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+    })(window,document,'script','dataLayer','GTM-5DNZFN');</script>
+    <!-- End Google Tag Manager -->
   </body>
 </html>
