@@ -23,7 +23,8 @@ silver1 = {'url':'img/butler-silver-sea-vase.jpg',
 			'name':'Sterling Silver Sea Shell and Coral Vase',
 			'permalink':'silver-sea-vase',
 			'encoded_url': urllib.quote_plus(home+'/img/butler-silver-sea-vase.jpg'),
-			'encoded_description': urllib.quote_plus('Sea shell and coral vase. Available.')}
+			'encoded_description': urllib.quote_plus('Sea shell and coral vase. Available.'),
+			'orginal_index':3}
 
 silver2 = {'url':'img/butler-hair-comb.jpg',
 			'url_small':'img/butler-hair-comb-small.jpg',
@@ -39,7 +40,8 @@ silver3 = {'url':'img/butler-penguin-bowl.jpg',
 			'name':'Sterling Silver Emperor Penguin Ice Bucket',
 			'permalink':'silver-penguin-bowl',
 			'encoded_url': urllib.quote_plus(home+'/img/butler-penguin-bowl.jpg'),
-			'encoded_description': urllib.quote_plus('Penguin bowl. Private collection.')}
+			'encoded_description': urllib.quote_plus('Penguin bowl. Private collection.'),
+			'orginal_index':5}
 
 silver4 = {'url':'img/butler-fish-slice.jpg',
 			'url_small':'img/butler-fish-slice-small.jpg',
@@ -79,7 +81,8 @@ silver8 = {'url':'img/butler-animal-bowl.jpg',
 			'name':'Sterling Silver African Plains Animal Punch Bowl',
 			'permalink':'silver-animal-bowl',
 			'encoded_url': urllib.quote_plus(home+'img/butler-animal-bowl.jpg'),
-			'encoded_description': urllib.quote_plus('Animal bowl. Museum of Fine Arts, Boston.')}
+			'encoded_description': urllib.quote_plus('Animal bowl. Museum of Fine Arts, Boston.'),
+			'orginal_index':4}
 
 silver9 = {'url':'img/butler-silver-baby-cup.jpg',
 			'url_small':'img/butler-silver-baby-cup-small.jpg',
@@ -105,7 +108,16 @@ silver11 = {'url':'img/sterling-silver-elephant-baby-cup.jpg',
 			'encoded_url': urllib.quote_plus(home+'img/sterling-silver-elephant-baby.jpg'),
 			'encoded_description': urllib.quote_plus('Sterling Silver Baby Cup with Elephant Handle.')}
 
-silver = [silver10,
+silver12 = {'url':'img/butler-sterling-silver-chased-pitcher.jpg',
+			'url_small':'img/butler-sterling-silver-chased-pitcher-small.jpg',
+			'description':'Sterling Silver Chased Pitcher. Available.',
+			'name':'Sterling Silver Chased Pitcher',
+			'permalink':'sterling-silver-chased-pitcher',
+			'encoded_url': urllib.quote_plus(home+'img/butler-sterling-silver-chased-pitcher.jpg'),
+			'encoded_description': urllib.quote_plus('Sterling Silver Chased Pitcher.')}
+
+silver = [silver12,
+			silver10,
 			silver11,
 			silver1,
 			silver8,
@@ -117,9 +129,17 @@ silver = [silver10,
 			silver2,
 			silver9]
 
+silver_home = [silver1, #id = 3
+				silver8, #id = 4
+				silver3,] #id = 5
+
 @app.route('/')
 def index():
-    return render_template('index.html', gallery=silver, title="Butler Silver Gallery", activeP=True, year=year)
+    return render_template('index.html', gallery=silver_home, title="Butler Silver Gallery", year=year)
+
+@app.route('/gallery')
+def gallery_all():
+    return render_template('gallery.html', gallery=silver, title="Butler Silver Gallery", activeP=True, year=year)
 
 
 @app.route('/about')

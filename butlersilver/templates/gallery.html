@@ -1,0 +1,33 @@
+{% extends "base.html" %}
+
+{% block meta %}
+    <meta name="{{ title }}" content="Gallery of the art of Robert A. Butler, Silversmith.">
+{% endblock %}
+
+{% block article %}
+
+      <section>
+        <ul id="gallery">
+        {% for silver in gallery %}
+          <li>
+            <!--a href="{{ silver.url }}"-->
+
+            <a href="{{ url_for('gallery', silver_permalink = silver.permalink, silver_id = gallery.index(silver)) }}">
+              <img src="{{ silver.url_small }}" alt="{{ silver.name }}">
+              <p>{{ silver.description }}</p>
+              <!--<div class="sharing">
+                <a id="pin" href="//www.pinterest.com/pin/create/button/
+              	  ?url={{silver.encoded_url}}&media={{silver.encoded_url}}&description={{silver.encoded_description}}"
+              	  data-pin-do="buttonPin"
+              	  data-pin-config="beside"
+              	  data-pin-color="red">
+              	  <img src="//assets.pinterest.com/images/pidgets/pinit_fg_en_rect_red_20.png" />
+                </a>
+              </div>-->
+            </a>
+          </li>
+    	{% endfor %}
+        </ul>
+      </section>
+
+{% endblock %}
