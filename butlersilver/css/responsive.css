@@ -5,12 +5,14 @@
 		float:none;
 		display: block;
 		margin: auto;
+		width: 100px;
 	}
 
 	#logo_home img {
 		float:none;
 		display: block;
 		margin: auto;
+		width: 75px;
 	}
 
 	#logo_home {
@@ -81,8 +83,6 @@
   HEADER
   ***********************************/
 	body {
-		background-image: url(../img/butler-silver-hallmark.png);
-		--background-size: 220px 220px;
 		background-repeat: no-repeat;
 		background-position: right bottom;
 		background-attachment: fixed;
@@ -103,11 +103,10 @@
 
   nav {
     background: none;
-    float: right;
+	  border-top: 1px solid #7c7b98;
+		border-bottom: 1px solid #7c7b98;
     font-size: 1.125em;
-    margin-right: 5%;
-    text-align: right;
-    //width: 56%;
+    margin: 2% 0;
   }
 
 	#nav_home {
@@ -126,18 +125,23 @@
   }
 
 	#logo_home {
-    font-size: 2em;
-    margin: 30px auto 0 auto;
+    margin: 10px auto 25px auto;
     text-align: center;
     /*width: 34%;*/
   }
 
+	#logo_top {
+	  width: 225px;
+	  margin: 10px auto;
+	  border-bottom: 1px solid #7c7b98;
+	}
+
   h1 {
-    font-size: 2em;
+    font-size: 1.75em;
   }
 
   h2 {
-    font-size: 0.825em;
+    font-size: 1.025em;
     margin-bottom: 20px;
   }
 

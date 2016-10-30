@@ -5,29 +5,27 @@
     <title>{{title}}</title>
     {% block meta %}
 	  {% endblock %}
-    <link href="https://fonts.googleapis.com/css?family=Vidaloka" rel='stylesheet' type='text/css'>
     <link rel="stylesheet" href="../css/normalize.css">
     <link rel="stylesheet" href="../css/main.css">
     <link rel="stylesheet" href="../css/responsive.css">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <script type="text/javascript" async defer src="//assets.pinterest.com/js/pinit.js"></script>
   </head>
   <body>
-    <header>
-      <a href="/" id="logo" style="text-decoration:none;">
+    <header style="background:none;border:none;">
+      <a href="/" id="logo_home" style="text-decoration:none;">
         <img src="/img/butler-silver-logo.png" alt="Butler Silver Logo"/>
-        <div id="name">
-        	<h1>Butler Silver</h1>
+        <div id="name_home">
+        	<div id="logo_top"><h1>BUTLER SILVER</h1></div>
         	<h2>Robert A. Butler Silversmith</h2>
         </div>
       </a>
       <div class="clearfix"></div>
       <nav>
         <ul>
-          <li><a href="../gallery" {% if activeP %}class="selected"{% endif %}>Gallery</a></li>
-          <li><a href="../repairs" {% if activeR %}class="selected"{% endif %}>Repairs</a></li>
-          <li><a href="../about" {% if activeA %}class="selected"{% endif %}>About</a></li>
-          <li><a href="../contact" {% if activeC %}class="selected"{% endif %}>Contact</a></li>
+          <li><a href="../gallery" {% if activeP %}class="selected"{% endif %}>GALLERY</a></li>
+          <li><a href="../repairs" {% if activeR %}class="selected"{% endif %}>REPAIRS</a></li>
+          <li><a href="../about" {% if activeA %}class="selected"{% endif %}>ABOUT</a></li>
+          <li><a href="../contact" {% if activeC %}class="selected"{% endif %}>CONTACT</a></li>
         </ul>
       </nav>
     </header>
@@ -39,7 +37,7 @@
     </div><!--/.wrapper-->
     <footer>
       <p>&copy; {{year}} Robert A. Butler</p>
-      <a href="#"><img src="/img/butler-silver-logo.png" alt="Butler Silver Logo" class="social-icon"></a>
+      <a href="/contact"><img src="/img/butler-silver-logo.png" alt="Butler Silver Logo" class="social-icon"></a>
     </footer>
     <!-- Google Tag Manager -->
     <noscript><iframe src="//www.googletagmanager.com/ns.html?id=GTM-5DNZFN"
