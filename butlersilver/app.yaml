@@ -9,13 +9,16 @@ handlers:
   static_files: favicon.ico
   upload: favicon\.ico
 
-- url: /sitemap\.xml    
+- url: /sitemap\.xml
   static_files: sitemap.xml
   upload: sitemap\.xml
 
 - url: /css/
   static_dir: css
-  
+
+- url: /static/
+  static_dir: static
+
 - url: /img/
   static_dir: img
 

@@ -5,9 +5,9 @@
     <title>{{title}}</title>
     {% block meta %}
 	  {% endblock %}
-    <link rel="stylesheet" href="../css/normalize.css">
-    <link rel="stylesheet" href="../css/main.css">
-    <link rel="stylesheet" href="../css/responsive.css">
+    <link rel="stylesheet" href="{{url_for('static', filename='normalize.css')}}">
+    <link rel="stylesheet" href="{{url_for('static', filename='main.css')}}">
+    <link rel="stylesheet" href="{{url_for('static', filename='responsive.css')}}">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
   </head>
   <body>

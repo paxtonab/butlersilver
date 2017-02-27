@@ -133,6 +133,20 @@ silver_home = [silver1, #id = 3
 				silver8, #id = 4
 				silver3,] #id = 5
 
+instagram = [u'BQvdvhNDIUA',
+ u'BQEtLszg7qV',
+ u'BQBG0Pih6nA',
+ u'BPvoDlLhrpt',
+ u'BPtEPCyhbLb',
+ u'BPoAujNhUaw',
+ #u'BPk_FZ9h3SV',
+ u'BPfQniwhHm_',
+ u'BPVxe8yBVSL',
+ u'BPVufKSBn1b',
+ u'BPGZmHihMAX',
+ u'BOs6i3ihqkl']
+
+
 @app.route('/')
 def index():
     return render_template('index.html', gallery=silver_home, title="Butler Silver Gallery", year=year)
@@ -149,7 +163,7 @@ def about():
 
 @app.route('/contact')
 def contact():
-    return render_template('contact.html', activeC=True, title="Contact Butler Silver", year=year)
+    return render_template('contact.html', activeC=True, title="Contact Butler Silver", year=year, instagram=instagram)
 
 
 @app.route('/repairs')
