@@ -1,4 +1,5 @@
 import datetime
+import insta
 import urllib
 from flask import Flask, flash, g, render_template, redirect, url_for
 from flask_wtf import Form
@@ -133,32 +134,33 @@ silver_home = [silver1, #id = 3
 				silver8, #id = 4
 				silver3,] #id = 5
 
-instagram = [u'BVaXPHqFx_S',
- u'BVFbTP5Fupy',
- u'BVA7ngyFmdv',
- u'BUvQqjQllm9',
- u'BUKwMl-l-yW',
- u'BTmozaFFinr',
- u'BTfLlaIFEkO',
- u'BSw7yuwgcvQ',
- u'BSmaS56DCaz',
- u'BSmXPSnDEt2',
- u'BSef4H_ASUs',
- #u'BR9ta90gUWM',
- u'BRt2otYAiIv',
- u'BReYEnGjGiY',
- u'BRWY1MxDUhe',
- u'BQvdvhNDIUA',
- u'BQEtLszg7qV',
- u'BQBG0Pih6nA',
- u'BPvoDlLhrpt',
- u'BPtEPCyhbLb',
- u'BPoAujNhUaw',
- u'BPfQniwhHm_',
- u'BPVxe8yBVSL',
- u'BPVufKSBn1b',
- u'BPGZmHihMAX',
- u'BOs6i3ihqkl']
+instagram = insta.get_latest_insta()
+# instagram = [u'BVaXPHqFx_S',
+#  u'BVFbTP5Fupy',
+#  u'BVA7ngyFmdv',
+#  u'BUvQqjQllm9',
+#  u'BUKwMl-l-yW',
+#  u'BTmozaFFinr',
+#  u'BTfLlaIFEkO',
+#  u'BSw7yuwgcvQ',
+#  u'BSmaS56DCaz',
+#  u'BSmXPSnDEt2',
+#  u'BSef4H_ASUs',
+#  #u'BR9ta90gUWM',
+#  u'BRt2otYAiIv',
+#  u'BReYEnGjGiY',
+#  u'BRWY1MxDUhe',
+#  u'BQvdvhNDIUA',
+#  u'BQEtLszg7qV',
+#  u'BQBG0Pih6nA',
+#  u'BPvoDlLhrpt',
+#  u'BPtEPCyhbLb',
+#  u'BPoAujNhUaw',
+#  u'BPfQniwhHm_',
+#  u'BPVxe8yBVSL',
+#  u'BPVufKSBn1b',
+#  u'BPGZmHihMAX',
+#  u'BOs6i3ihqkl']
 
 
 @app.route('/')
