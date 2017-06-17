@@ -134,7 +134,7 @@ silver_home = [silver1, #id = 3
 				silver8, #id = 4
 				silver3,] #id = 5
 
-instagram = insta.get_latest_insta()
+
 # instagram = [u'BVaXPHqFx_S',
 #  u'BVFbTP5Fupy',
 #  u'BVA7ngyFmdv',
@@ -179,7 +179,7 @@ def about():
 
 @app.route('/contact')
 def contact():
-    return render_template('contact.html', activeC=True, title="Contact Butler Silver", year=year, instagram=instagram)
+    return render_template('contact.html', activeC=True, title="Contact Butler Silver", year=year, instagram=insta.get_latest_insta())
 
 
 @app.route('/repairs')
