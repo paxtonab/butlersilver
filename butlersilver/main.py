@@ -20,11 +20,11 @@ encoded_home = urllib.quote_plus(home)
 
 silver1 = {'url':'img/butler-silver-sea-vase.jpg',
 			'url_small':'img/butler-silver-sea-vase-small.jpg',
-			'description':'Sea shell and coral vase. Available.',
+			'description':'Sea shell and coral vase.',
 			'name':'Sterling Silver Sea Shell and Coral Vase',
 			'permalink':'silver-sea-vase',
 			'encoded_url': urllib.quote_plus(home+'/img/butler-silver-sea-vase.jpg'),
-			'encoded_description': urllib.quote_plus('Sea shell and coral vase. Available.'),
+			'encoded_description': urllib.quote_plus('Sea shell and coral vase.'),
 			'orginal_index':3}
 
 silver2 = {'url':'img/butler-hair-comb.jpg',
@@ -54,27 +54,27 @@ silver4 = {'url':'img/butler-fish-slice.jpg',
 
 silver5 = {'url':'img/butler-silver-frog.jpg',
 			'url_small':'img/butler-silver-frog-small.jpg',
-			'description':'Sterling silver green frog. Available.',
+			'description':'Sterling silver green frog.',
 			'name':'Sterling Silver Green Frog',
 			'permalink':'silver-frog',
 			'encoded_url': urllib.quote_plus(home+'/img/butler-silver-frog.jpg'),
-			'encoded_description': urllib.quote_plus('Silver green frog. Available.')}
+			'encoded_description': urllib.quote_plus('Silver green frog.')}
 
 silver6 = {'url':'img/butler-acorn-oak-leaves-wine-coaster.jpg',
 			'url_small':'img/butler-acorn-oak-leaves-wine-coaster-small.jpg',
-			'description':'Acorn and oak leaf wine bottle coaster. Available.',
+			'description':'Acorn and oak leaf wine bottle coaster.',
 			'name':'Sterling Silver Acorn and Oak Leaf Wine Bottle Coaster',
 			'permalink':'silver-acorn-oak-leaves-wine-coaster',
 			'encoded_url': urllib.quote_plus(home+'/img/butler-acorn-oak-leaves-wine-coaster.jpg'),
-			'encoded_description': urllib.quote_plus('Acorn and oak leaf wine bottle coaster. Available.')}
+			'encoded_description': urllib.quote_plus('Acorn and oak leaf wine bottle coaster.')}
 
 silver7 = {'url':'img/butler-mushroom-wine-coaster.jpg',
 			'url_small':'img/butler-mushroom-wine-coaster-small.jpg',
-			'description':'Mushroom wine bottle coaster. Available.',
+			'description':'Mushroom wine bottle coaster.',
 			'name':'Sterling Silver Mushroom Wine Bottle Coaster',
 			'permalink':'silver-mushroom-wine-coaster',
 			'encoded_url': urllib.quote_plus(home+'/img/butler-mushroom-wine-coaster.jpg'),
-			'encoded_description': urllib.quote_plus('Mushroom wine bottle coaster. Available.')}
+			'encoded_description': urllib.quote_plus('Mushroom wine bottle coaster.')}
 
 silver8 = {'url':'img/butler-animal-bowl.jpg',
 			'url_small':'img/butler-animal-bowl-small.jpg',
@@ -87,7 +87,7 @@ silver8 = {'url':'img/butler-animal-bowl.jpg',
 
 silver9 = {'url':'img/butler-silver-baby-cup.jpg',
 			'url_small':'img/butler-silver-baby-cup-small.jpg',
-			'description':'Baby cup with swan handle. Available.',
+			'description':'Baby cup with swan handle.',
 			'name':'Sterling Silver Baby Cup with Swan Handle',
 			'permalink':'silver-baby-cup',
 			'encoded_url': urllib.quote_plus(home+'img/butler-silver-baby-cup.jpg'),
@@ -95,7 +95,7 @@ silver9 = {'url':'img/butler-silver-baby-cup.jpg',
 
 silver10 = {'url':'img/mice-and-cheese-silver-knife.jpg',
 			'url_small':'img/mice-and-cheese-silver-knife-small.jpg',
-			'description':'Sterling Silver Mouse & Cheese Knife. Available.',
+			'description':'Sterling Silver Mouse & Cheese Knife.',
 			'name':'Sterling Silver Mouse & Cheese, Cheese Knife',
 			'permalink':'silver-cheese-knife',
 			'encoded_url': urllib.quote_plus(home+'img/mice-and-cheese-silver-knife.jpg'),
@@ -103,7 +103,7 @@ silver10 = {'url':'img/mice-and-cheese-silver-knife.jpg',
 
 silver11 = {'url':'img/sterling-silver-elephant-baby-cup.jpg',
 			'url_small':'img/sterling-silver-elephant-baby-cup-small.jpg',
-			'description':'Sterling Silver Baby Cup with Elephant Handle. Available.',
+			'description':'Sterling Silver Baby Cup with Elephant Handle.',
 			'name':'Sterling Silver Baby Cup with Elephant Handle',
 			'permalink':'silver-baby-cup-elephant-handle',
 			'encoded_url': urllib.quote_plus(home+'img/sterling-silver-elephant-baby.jpg'),
@@ -117,7 +117,35 @@ silver12 = {'url':'img/butler-sterling-silver-chased-pitcher.jpg',
 			'encoded_url': urllib.quote_plus(home+'img/butler-sterling-silver-chased-pitcher.jpg'),
 			'encoded_description': urllib.quote_plus('Sterling Silver Chased Pitcher.')}
 
-silver = [silver12,
+silver13 = {'url':'img/sterling-silver-animal-baby-cup.jpg',
+			'url_small':'img/sterling-silver-animal-baby-cup-small.jpg',
+			'description':'Sterling Silver Baby Cup.',
+			'name':'Sterling Silver Baby Cup',
+			'permalink':'sterling-silver-chased-pitcher',
+			'encoded_url': urllib.quote_plus(home+'img/sterling-silver-animal-baby-cup-small.jpg'),
+			'encoded_description': urllib.quote_plus('Sterling Silver Baby Cup.')}
+
+silver14 = {'url':'img/mice-and-cheese-sterling-silver-box.jpg',
+			'url_small':'img/mice-and-cheese-sterling-silver-box-small.jpg',
+			'description':'Three Blind Mice & Cheese Box.',
+			'name':'Three Blind Mice & Cheese Box',
+			'permalink':'sterling-silver-three-blind-mice-cheese-box',
+			'encoded_url': urllib.quote_plus(home+'img/mice-and-cheese-sterling-silver-box.jpg'),
+			'encoded_description': urllib.quote_plus('Sterling Silver Baby Cup.')}
+
+silver15 = {'url':'img/sterling-silver-flower-vase.jpg',
+			'url_small':'img/sterling-silver-flower-vase-small.jpg',
+			'description':'Sterling Silver Flower Vase.',
+			'name':'Sterling Silver Flower Vase',
+			'permalink':'flowers-sterling-silver-box',
+			'encoded_url': urllib.quote_plus(home+'img/sterling-silver-flower-vase.jpg'),
+			'encoded_description': urllib.quote_plus('Sterling Silver Flower Vase.')}
+
+
+silver = [silver15,
+			silver14,
+			silver13,
+			silver12,
 			silver10,
 			silver11,
 			silver1,
@@ -133,34 +161,6 @@ silver = [silver12,
 silver_home = [silver1, #id = 3
 				silver8, #id = 4
 				silver3,] #id = 5
-
-
-# instagram = [u'BVaXPHqFx_S',
-#  u'BVFbTP5Fupy',
-#  u'BVA7ngyFmdv',
-#  u'BUvQqjQllm9',
-#  u'BUKwMl-l-yW',
-#  u'BTmozaFFinr',
-#  u'BTfLlaIFEkO',
-#  u'BSw7yuwgcvQ',
-#  u'BSmaS56DCaz',
-#  u'BSmXPSnDEt2',
-#  u'BSef4H_ASUs',
-#  #u'BR9ta90gUWM',
-#  u'BRt2otYAiIv',
-#  u'BReYEnGjGiY',
-#  u'BRWY1MxDUhe',
-#  u'BQvdvhNDIUA',
-#  u'BQEtLszg7qV',
-#  u'BQBG0Pih6nA',
-#  u'BPvoDlLhrpt',
-#  u'BPtEPCyhbLb',
-#  u'BPoAujNhUaw',
-#  u'BPfQniwhHm_',
-#  u'BPVxe8yBVSL',
-#  u'BPVufKSBn1b',
-#  u'BPGZmHihMAX',
-#  u'BOs6i3ihqkl']
 
 
 @app.route('/')
