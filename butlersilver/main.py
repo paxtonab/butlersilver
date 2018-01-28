@@ -141,26 +141,35 @@ silver15 = {'url':'img/sterling-silver-flower-vase.jpg',
 			'encoded_url': urllib.quote_plus(home+'img/sterling-silver-flower-vase.jpg'),
 			'encoded_description': urllib.quote_plus('Sterling Silver Flower Vase.')}
 
+silver16 = {'url':'img/sterling-silver-water-pitcher.jpg',
+			'url_small':'img/sterling-silver-water-pitcher-small.jpg',
+			'description':'Sterling Silver Water Pitcher.',
+			'name':'Sterling Sterling Silver Water Pitcher',
+			'permalink':'sterling-silver-water-pitcher',
+			'encoded_url': urllib.quote_plus(home+'img/sterling-silver-water-pitcher.jpg'),
+			'encoded_description': urllib.quote_plus('Sterling Silver Water Pitcher.')}
 
-silver = [silver15,
-			silver14,
-			silver13,
-			silver12,
-			silver10,
-			silver11,
-			silver1,
-			silver8,
-			silver3,
-			silver4,
-			silver6,
-			silver7,
-			silver5,
-			silver2,
-			silver9]
+
+silver = [silver16,
+		  silver15,
+		  silver14,
+		  silver13,
+		  silver12,
+		  silver10,
+		  silver11,
+		  silver1,
+		  silver8,
+		  silver3,
+		  silver4,
+		  silver6,
+		  silver7,
+		  silver5,
+		  silver2,
+		  silver9]
 
 silver_home = [silver1, #id = 3
-				silver8, #id = 4
-				silver3,] #id = 5
+			   silver8, #id = 4
+			   silver3,] #id = 5
 
 
 @app.route('/')
