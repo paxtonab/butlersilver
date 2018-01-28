@@ -1,7 +1,7 @@
 # butlersilver.com
-Custom flask app for butlersilver.com
+Custom website for butlersilver.com.
 ## Overview
-This project required a high level of design customization without the need for a heavier CMS, so I built a small flask app to support a fully customized design while allowing for basic content updates without requiring a heavy CMS.
+This website required a high level of design customization, without the need for a heavy CMS. A simple flask app with a lightweight, custom CSS gave the needed design flexibility, and the use of Google App Engine to manage deployments and back end infrastructure allowed for easy content updates.
 ## TODO:
-1. Create instagram function to pull new Instagram posts on a semi-regular basis
+1. Add caching to the Instagram feed to allow for better page load times
 2. Integrate SQLAlchemy to store flat files in SQLite db
