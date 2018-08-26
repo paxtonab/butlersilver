@@ -25,7 +25,7 @@ silver1 = {'url':'img/butler-silver-sea-vase.jpg',
 			'permalink':'silver-sea-vase',
 			'encoded_url': urllib.quote_plus(home+'/img/butler-silver-sea-vase.jpg'),
 			'encoded_description': urllib.quote_plus('Sea shell and coral vase.'),
-			'orginal_index':3}
+			'orginal_index':7}
 
 silver2 = {'url':'img/butler-hair-comb.jpg',
 			'url_small':'img/butler-hair-comb-small.jpg',
@@ -42,7 +42,7 @@ silver3 = {'url':'img/butler-penguin-bowl.jpg',
 			'permalink':'silver-penguin-bowl',
 			'encoded_url': urllib.quote_plus(home+'/img/butler-penguin-bowl.jpg'),
 			'encoded_description': urllib.quote_plus('Penguin bowl. Private collection.'),
-			'orginal_index':5}
+			'orginal_index':9}
 
 silver4 = {'url':'img/butler-fish-slice.jpg',
 			'url_small':'img/butler-fish-slice-small.jpg',
@@ -83,7 +83,7 @@ silver8 = {'url':'img/butler-animal-bowl.jpg',
 			'permalink':'silver-animal-bowl',
 			'encoded_url': urllib.quote_plus(home+'img/butler-animal-bowl.jpg'),
 			'encoded_description': urllib.quote_plus('Animal bowl. Museum of Fine Arts, Boston.'),
-			'orginal_index':4}
+			'orginal_index':8}
 
 silver9 = {'url':'img/butler-silver-baby-cup.jpg',
 			'url_small':'img/butler-silver-baby-cup-small.jpg',
@@ -137,7 +137,7 @@ silver15 = {'url':'img/sterling-silver-flower-vase.jpg',
 			'url_small':'img/sterling-silver-flower-vase-small.jpg',
 			'description':'Sterling Silver Flower Vase.',
 			'name':'Sterling Silver Flower Vase',
-			'permalink':'flowers-sterling-silver-box',
+			'permalink':'sterling-silver-flower-vase',
 			'encoded_url': urllib.quote_plus(home+'img/sterling-silver-flower-vase.jpg'),
 			'encoded_description': urllib.quote_plus('Sterling Silver Flower Vase.')}
 
@@ -150,26 +150,26 @@ silver16 = {'url':'img/sterling-silver-water-pitcher.jpg',
 			'encoded_description': urllib.quote_plus('Sterling Silver Water Pitcher.')}
 
 
-silver = [silver16,
-		  silver15,
-		  silver14,
-		  silver13,
-		  silver12,
-		  silver10,
-		  silver11,
-		  silver1,
-		  silver8,
-		  silver3,
-		  silver4,
-		  silver6,
-		  silver7,
-		  silver5,
-		  silver2,
-		  silver9]
+silver = [silver16, # 00
+		  silver15, # 01
+		  silver14, # 02
+		  silver13, # 03
+		  silver12, # 04
+		  silver10, # 05
+		  silver11, # 06
+		  silver1,  # 07
+		  silver8,  # 08
+		  silver3,  # 09
+		  silver4,  # 10
+		  silver6,  # 11
+		  silver7,  # 12
+		  silver5,  # 13
+		  silver2,  # 14
+		  silver9]  # 15
 
-silver_home = [silver1, #id = 3
-			   silver8, #id = 4
-			   silver3,] #id = 5
+silver_home = [silver1, #id = 7
+			   silver8, #id = 8
+			   silver3,] #id = 9
 
 
 @app.route('/')
