@@ -20,36 +20,11 @@ def get_latest_insta():
         insta_text = data.split('window._sharedData =')[1].split(';')[0]
         insta_json = json.loads(insta_text)
 
-        insta_ids = [node['code'] for node in insta_json['entry_data']['ProfilePage'][0]['user']['media']['nodes']]
+        edges = [node for node in insta_json['entry_data']['ProfilePage'][0]['graphql']['user']['edge_owner_to_timeline_media']['edges']]
+        insta_ids = [node['node']['shortcode'] for node in edges]
 
         return insta_ids
 
     except:
-
-        insta_ids = [u'BVaXPHqFx_S',
-         u'BVFbTP5Fupy',
-         u'BVA7ngyFmdv',
-         u'BUvQqjQllm9',
-         u'BUKwMl-l-yW',
-         u'BTmozaFFinr',
-         u'BTfLlaIFEkO',
-         u'BSw7yuwgcvQ',
-         u'BSmaS56DCaz',
-         u'BSmXPSnDEt2',
-         u'BSef4H_ASUs',
-         #u'BR9ta90gUWM',
-         u'BRt2otYAiIv',
-         u'BReYEnGjGiY',
-         u'BRWY1MxDUhe',
-         u'BQvdvhNDIUA',
-         u'BQEtLszg7qV',
-         u'BQBG0Pih6nA',
-         u'BPvoDlLhrpt',
-         u'BPtEPCyhbLb',
-         u'BPoAujNhUaw',
-         u'BPfQniwhHm_',
-         u'BPVxe8yBVSL',
-         u'BPVufKSBn1b',
-         u'BPGZmHihMAX',
-         u'BOs6i3ihqkl']
+        insta_ids = [u'Bm5xihGH-5y', u'BlRlDmRn8_z', u'BlQkPIRnYun', u'BlMDbqXl4-f', u'BlEUzH4HUxb', u'BkF-5qQn8An', u'BkF9SzlnCQE', u'Bi0FDbvnULU', u'BipxdfEnaim', u'Bg592nnBMGm', u'BgZky1Phqfs', u'BftJVe0Foag']
         return insta_ids
